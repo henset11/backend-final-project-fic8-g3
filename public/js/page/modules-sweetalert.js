@@ -60,3 +60,19 @@ $("#swal-8").click(function() {
     timer: 3000,
   });
 });
+
+function deleteConfirmation(url) {
+    swal({
+        title: 'Are you sure you want to delete this data?',
+        text: "This action cannot be undone!",
+        icon: 'warning',
+        buttons: true,
+        dangerMode: true,
+    }).then((result) => {
+        if (result) {
+            var form = document.getElementById('form-delete');
+            form.action = url;
+            form.submit();
+        }
+    });
+}

@@ -12,7 +12,7 @@
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Dashboard</span></a>
                 <ul class="dropdown-menu">
                     <li>
-                        <a class="nav-link" href="#">General Dashboard</a>
+                        <a class="nav-link" href="/">General Dashboard</a>
                     </li>
 
                 </ul>
@@ -21,7 +21,7 @@
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Users</span></a>
                 <ul class="dropdown-menu">
                     <li>
-                        <a class="nav-link" href="#">User List</a>
+                        <a class="nav-link" href="{{ route('user.index') }}">User List</a>
                     </li>
 
                 </ul>
