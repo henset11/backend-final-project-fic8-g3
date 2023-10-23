@@ -13,18 +13,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('pages.app.dashboard');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/', function () {
+        return view('pages.app.dashboard');
+    });
 });
 
-Route::get('/login', function () {
-    return view('pages.auth.auth-login');
-})->name('login');
+// Route::get('/login', function () {
+//     return view('pages.auth.auth-login');
+// })->name('login');
 
-Route::get('/forgot-password', function () {
-    return view('pages.auth.auth-forgot-password');
-})->name('forgot-password');
+// Route::get('/forgot-password', function () {
+//     return view('pages.auth.auth-forgot-password');
+// })->name('forgot-password');
 
-Route::get('/reset-password', function () {
-    return view('pages.auth.auth-reset-password');
-})->name('reset-password');
+// Route::get('/reset-password', function () {
+//     return view('pages.auth.auth-reset-password');
+// })->name('reset-password');
