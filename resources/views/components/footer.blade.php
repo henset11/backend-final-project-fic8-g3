@@ -1,6 +1,6 @@
 <footer class="main-footer">
     <div class="footer-left">
-        Copyright &copy; 2023 <div class="bullet"></div> Created By FIC8 G3 Team</a>
+        Copyright &copy; 2023 <div class="bullet"></div> Created By FIC8 G3 Team
     </div>
     <div class="footer-right">
         2.3.0
