@@ -31,7 +31,7 @@
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Subjects</span></a>
                 <ul class="dropdown-menu">
                     <li>
-                        <a class="nav-link" href="#">Subject List</a>
+                        <a class="nav-link" href="{{ route('subject.index') }}">Subject List</a>
                     </li>
 
                 </ul>
@@ -41,7 +41,7 @@
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Schedules</span></a>
                 <ul class="dropdown-menu">
                     <li>
-                        <a class="nav-link" href="#">Schedule List</a>
+                        <a class="nav-link" href="{{ route('schedule.index') }}">Schedule List</a>
                     </li>
 
                 </ul>
