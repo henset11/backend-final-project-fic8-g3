@@ -100,7 +100,7 @@
 
                                                         <button class="btn btn-sm btn-danger btn-icon confirm-delete"
                                                             onclick="deleteConfirmation('{{ route('user.destroy', $user->id) }}')">
-                                                            <i class="fas fas-times"></i>
+                                                            <i class="fas fa-times"></i>
                                                             Delete
                                                         </button>
 
