@@ -3,30 +3,26 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreScheduleRequest;
-use App\Http\Resources\ScheduleResource;
-use App\Models\Schedule;
 use Illuminate\Http\Request;
 
-class ScheduleController extends Controller
+class SubjectController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index(Request $request)
     {
-        $user = $request->user();
-        $schedules = Schedule::where('student_id', '=', $user->id)->get();
-        return ScheduleResource::collection($schedules->load('subject', 'subject.lecturer', 'student'));
+        // $user = $request->user();
+        // $schedules = Schedule::where('student_id', '=', $user->id)->get();
+        // return ScheduleResource::collection($schedules->load('subject', 'subject.lecturer', 'student'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreScheduleRequest $request)
+    public function store(Request $request)
     {
-        $schedule = Schedule::create($request->all());
-        return $schedule;
+        //
     }
 
     /**
@@ -48,8 +44,8 @@ class ScheduleController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Schedule $schedule)
+    public function destroy(string $id)
     {
-        $schedule->delete();
+        //
     }
 }
