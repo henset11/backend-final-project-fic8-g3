@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\KhsController;
 use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\UserController;
@@ -29,6 +30,10 @@ Route::middleware(['auth'])->group(function () {
 
 Route::middleware(['auth'])->group(function () {
     Route::resource('schedule', ScheduleController::class);
+});
+
+Route::middleware(['auth'])->group(function () {
+    Route::resource('khs', KhsController::class);
 });
 
 Route::middleware(['auth'])->group(function () {
