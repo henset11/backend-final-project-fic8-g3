@@ -34,20 +34,20 @@
 
                             <div class="form-group">
                                 <label for="matakuliah">Matakuliah</label>
-                                <select class="cari" name="subject_id" style="width: 100%;" required>
+                                <select class="form-control select2" name="subject_id" style="width: 100%;" required>
                                     <option value=""></option>
-                                    @foreach ($matakuliah as $id => $title)
-                                        <option value="{{ $id }}">{{ $title }}</option>
+                                    @foreach ($subjects as $subject)
+                                        <option value="{{ $subject->id }}">{{ $subject->title }}</option>
                                     @endforeach
                                 </select>
                             </div>
 
                             <div class="form-group">
                                 <label for="mahasiswa">Mahasiswa</label>
-                                <select class="cari" name="student_id" style="width: 100%;">
+                                <select class="form-control select2" name="student_id" style="width: 100%;">
                                     <option value=""></option>
-                                    @foreach ($mahasiswa as $id => $name)
-                                        <option value="{{ $id }}">{{ $name }}</option>
+                                    @foreach ($users as $user)
+                                        <option value="{{ $user->id }}">{{ $user->name }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -98,7 +98,6 @@
                                 </select>
                             </div>
 
-
                             <div class="card-footer text-right">
                                 <button class="btn btn-primary">Submit</button>
                             </div>
@@ -132,13 +131,6 @@
                     document.getElementById("grade").value = grade;
                 }
             </script>
-            <script type="text/javascript">
-                $('.cari').select2({
-                    placeholder: 'Cari...',
-                    // Additional Select2 configuration options if needed
-                });
-            </script>
-
         </section>
     </div>
 @endsection

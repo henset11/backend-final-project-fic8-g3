@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreKhsRequest;
 use App\Models\Khs;
+use App\Models\Subject;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -34,18 +36,20 @@ class KhsController extends Controller
     public function create()
     {
 
-        $data['mahasiswa'] =  DB::connection('mysql')
-            ->table('users')
-            ->where('roles', 'mahasiswa')
-            ->pluck('name', 'id');
-        $data['mahasiswa_data'] = null;
+        // $data['mahasiswa'] =  DB::connection('mysql')
+        //     ->table('users')
+        //     ->where('roles', 'mahasiswa')
+        //     ->pluck('name', 'id');
+        // $data['mahasiswa_data'] = null;
 
-        $data['matakuliah'] =  DB::connection('mysql')
-            ->table('subjects')
-            ->pluck('title', 'id');
-        $data['matakuliah_data'] = null;
+        // $data['matakuliah'] =  DB::connection('mysql')
+        //     ->table('subjects')
+        //     ->pluck('title', 'id');
+        // $data['matakuliah_data'] = null;
 
-        return view('pages.khs.create', $data);
+        $subjects = Subject::get();
+        $users = User::where('roles', 'mahasiswa')->get();
+        return view('pages.khs.create', compact('subjects', 'users'));
     }
 
     public function store(StoreKhsRequest $request)
@@ -59,6 +63,7 @@ class KhsController extends Controller
             'tahun_akademik' => $request['tahun_akademik'],
             'semester' => $request['semester'],
             'created_by' => $request['created_by'],
+            'updated_by' => $request['created_by'],
         ]);
 
         return redirect(route('khs.index'))->with('success', 'New User Successfully');

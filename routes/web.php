@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Api\KhsController;
+use App\Http\Controllers\KhsController;
 use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\UserController;
