@@ -30,7 +30,7 @@ Route::apiResource('schedules', ScheduleController::class)
     ->middleware('auth:sanctum');
 
 Route::middleware(['auth:sanctum'])->group(function () {
-    Route::apiResource('khs', KhsController::class);
+    Route::apiResource('khsapi', KhsController::class);
 });
 
 Route::middleware(['auth:sanctum'])->group(function () {
