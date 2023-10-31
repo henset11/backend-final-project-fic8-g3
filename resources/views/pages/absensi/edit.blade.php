@@ -36,7 +36,7 @@
                      
                         <div class="form-group">
                             <label>Jadwal</label>
-                            <input type="text" class="form-control" value="{{ $absensimatkul->hari }} | {{ $absensimatkul->jam_mulai }} | {{ $absensimatkul->jam_selesai }}" readonly>
+                            <input type="text" class="form-control" value="{{ $absensimatkul->hari }} | Jam {{ $absensimatkul->jam_mulai }} - {{ $absensimatkul->jam_selesai }}" readonly>
 
                         </div>
 

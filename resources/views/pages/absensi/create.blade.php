@@ -37,7 +37,7 @@
                                 <select class="form-control select2" name="schedule_id" style="width: 100%;" required>
                                 <option value="">Pilih Jadwal</option>
                                     @foreach ($schedules as $schedule)
-                                        <option value="{{ $schedule->id }}">{{ $schedule->hari }} | {{ $schedule->jam_mulai }} | {{ $schedule->jam_selesai }} </option>
+                                        <option value="{{ $schedule->id }}">{{ $schedule->hari }} | {{ $schedule->jam_mulai }} - {{ $schedule->jam_selesai }} </option>
                                     @endforeach
                                 </select>
                             </div>
