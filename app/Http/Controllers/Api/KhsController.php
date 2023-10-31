@@ -16,7 +16,7 @@ class KhsController extends Controller
     {
         $user = $request->user();
         $khs = Khs::where('student_id', '=', $user->id)->paginate(10);
-        return KhsResource::collection($khs->load('subject'));
+        return KhsResource::collection($khs->load('subject', 'student'));
     }
 
     /**
