@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\AbsensiMatkulRequest;
 use App\Models\AbsensiMatkul;
 use Illuminate\Http\Request;
 
@@ -21,18 +22,8 @@ class AbsensiMatkulController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(AbsensiMatkulRequest $request)
     {
-        $request->validate([
-            'schedule_id' => 'required|exists:schedules,id',
-            'kode_absensi' => 'required',
-            'tahun_akademik' => 'required',
-            'semester' => 'required',
-            'pertemuan' => 'required',
-            'latitude' => 'required',
-            'longitude' => 'required',
-        ]);
-
         $absensiMatkul = AbsensiMatkul::create($request->all());
         return $absensiMatkul;
     }
