@@ -28,11 +28,11 @@ class AbsensiMatkulRequest extends FormRequest
             'tahun_akademik' => 'required',
             'semester' => 'required',
             'pertemuan' => 'required',
-            'status' => 'nullable',
-            'keterangan' => 'nullable',
+            'status' => 'required',
+            'keterangan' => 'required',
             'latitude' => 'required',
             'longitude' => 'required',
-            'nilai' => 'nullable',
+            'nilai' => 'required',
         ];
     }
 }
