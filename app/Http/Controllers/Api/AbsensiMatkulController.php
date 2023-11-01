@@ -16,7 +16,7 @@ class AbsensiMatkulController extends Controller
     {
         $user = $request->user();
         $absensiMatkul = AbsensiMatkul::where('student_id', '=', $user->id)->paginate(10);
-        return $absensiMatkul->load('schedule');
+        return $absensiMatkul->load('schedule', 'schedule.subject');
     }
 
     /**
