@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\AbsensiMatkulRequest;
+use App\Http\Resources\AbsensiResource;
 use App\Models\AbsensiMatkul;
 use Illuminate\Http\Request;
 
@@ -16,7 +17,7 @@ class AbsensiMatkulController extends Controller
     {
         $user = $request->user();
         $absensiMatkul = AbsensiMatkul::where('student_id', '=', $user->id)->paginate(10);
-        return $absensiMatkul->load('schedule', 'schedule.subject');
+        return AbsensiResource::collection($absensiMatkul->load('schedule', 'schedule.subject'));
     }
 
     /**
